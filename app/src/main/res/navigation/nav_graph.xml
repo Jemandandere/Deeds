@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/deedsListFragment">
+
+    <fragment
+        android:id="@+id/deedsListFragment"
+        android:name="com.jemandandere.deeds.screens.deeds_list.DeedsListFragment"
+        android:label="fragment_deeds_list"
+        tools:layout="@layout/fragment_deeds_list" >
+        <action
+            android:id="@+id/action_deedsListFragment_to_deedEditFragment"
+            app:destination="@id/deedEditFragment"
+            app:enterAnim="@anim/slide_in_right_to_left"
+            app:exitAnim="@anim/slide_out_right_to_left"
+            app:popEnterAnim="@anim/slide_in_left_to_right"
+            app:popExitAnim="@anim/slide_out_left_to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/deedEditFragment"
+        android:name="com.jemandandere.deeds.screens.deeds_edit.DeedEditFragment"
+        android:label="fragment_deed_edit"
+        tools:layout="@layout/fragment_deed_edit" >
+        <action
+            android:id="@+id/action_deedEditFragment_to_deedsListFragment"
+            app:destination="@id/deedsListFragment"
+            app:enterAnim="@anim/slide_in_left_to_right"
+            app:exitAnim="@anim/slide_out_left_to_right"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+</navigation>
